@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elysium by Kripa Elite - Premium Residences</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-gold: #8B6914;
+            --secondary-gold: #DAA520;
+            --light-gold: #F4E6A1;
+            --dark-gold: #6B4E0E;
+            --text-dark: #2c2c2c;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Modern Bootstrap Navbar */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 100%) !important;
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 30px rgba(139, 105, 20, 0.1);
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 4px 30px rgba(139, 105, 20, 0.3);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+        }
+
+        .logo-space {
+            width: 160px;
+            height: 55px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px dashed rgba(255, 255, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 12px;
+            text-align: center;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .logo-space:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 500;
+            padding: 8px 16px !important;
+            margin: 0 5px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cta-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: white !important;
+            padding: 10px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .cta-btn:hover {
+            background: white;
+            color: var(--primary-gold) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-btn i {
+            font-size: 16px;
+        }
+
+        /* Hamburger Menu for Mobile */
+        .navbar-toggler {
+            border: none;
+            padding: 4px 8px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(139, 105, 20, 0.5) 0%, rgba(218, 165, 32, 0.4) 50%, rgba(184, 134, 11, 0.5) 100%), url(./images/ELYSIUM_Top.jpg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 140px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(139, 105, 20, 0.3);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4.5em;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .primary-btn {
+            background: white;
+            color: var(--primary-gold);
+            padding: 18px 35px;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+            color: var(--primary-gold);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: white;
+            padding: 18px 35px;
+            border: 3px solid white;
+            border-radius: 35px;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .secondary-btn:hover {
+            background: white;
+            color: var(--primary-gold);
+            transform: translateY(-4px);
+        }
+
+        /* Quick Form */
+        .quick-form {
+            background: white;
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            margin: -60px auto 0;
+            position: relative;
+            z-index: 10;
+            max-width: 700px;
+            border: 1px solid rgba(218, 165, 32, 0.2);
+        }
+
+        .form-title {
+            text-align: center;
+            color: var(--primary-gold);
+            margin-bottom: 35px;
+            font-size: 1.8em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .form-input,
+        .form-select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e8ecef;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #fafbfc;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--secondary-gold);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.1);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: white;
+            padding: 18px 35px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2em;
+            font-weight: 700;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(139, 105, 20, 0.4);
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3em;
+            color: var(--primary-gold);
+            margin-bottom: 60px;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3em;
+            color: var(--text-light);
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Home Options */
+        .home-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+        }
+
+        .home-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--secondary-gold);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .home-type {
+            font-size: 2.2em;
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .home-size {
+            font-size: 1.5em;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .home-features {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        .home-features li {
+            list-style: none;
+            font-size: 1.4em;
+            padding: 8px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .home-features li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+
+        /* Image Placeholders */
+        .image-class {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #f5f5f5, #ececec);
+            border: 3px dashed #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-size: 16px;
+            color: var(--text-light);
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .image-placeholder:hover {
+            border-color: var(--secondary-gold);
+            background: linear-gradient(135deg, #fafafa, #f0f0f0);
+        }
+
+        .image-placeholder i {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: var(--secondary-gold);
+        }
+
+        /* Amenities */
+        .amenities-section {
+            background: var(--bg-light);
+        }
+
+        .amenity-item {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            border: 1px solid rgba(218, 165, 32, 0.1);
+        }
+
+        .amenity-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--secondary-gold);
+        }
+
+        .amenity-icon {
+            font-size: 3em;
+            color: var(--secondary-gold);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .amenity-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        /* Features */
+        .feature-category {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            border-left: 5px solid var(--secondary-gold);
+        }
+
+        .feature-title {
+            color: var(--primary-gold);
+            font-size: 1.5em;
+            margin-bottom: 25px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-list li {
+            list-style: none;
+            padding: 10px 0;
+            position: relative;
+            padding-left: 30px;
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+
+        .feature-list li::before {
+            content: '🔸';
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+
+        /* Why Elysium */
+        .why-elysium {
+            margin-top: 20px;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 30px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2em;
+            box-shadow: 0 8px 25px rgba(139, 105, 20, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-item:hover .benefit-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .benefit-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 15px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.03)" points="0,0 1000,200 1000,0"/></svg>');
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-btn {
+            background: white;
+            color: var(--primary-gold);
+            padding: 20px 45px;
+            border: none;
+            border-radius: 35px;
+            font-size: 1.3em;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            color: var(--primary-gold);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer h5 {
+            color: var(--secondary-gold);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-content {
+            margin-bottom: 40px;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .powered-by {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        .marqueee-text
+        {
+            font-size: 53px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }   
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .download-button{
+                flex-direction: row;
+            }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .download-button{
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 2.8em;
+                letter-spacing: 2px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+        
+            .primary-btn,
+            .secondary-btn {
+                width: 280px;
+                justify-content: center;
+            }
+
+            .quick-form {
+                margin: -40px 15px 0;
+                padding: 30px 25px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2.2em;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 8px;
+            }
+
+            .cta-btn {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .navbar-nav {
+                margin-top: 15px;
+            }
+
+            .navbar-nav .nav-link {
+                text-align: center;
+                margin: 5px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            .marqueee-text
+        {
+            font-size: 33px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }   
+            .hero {
+                padding: 120px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 3.2em;
+                letter-spacing: 1px;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .logo-space {
+                width: 130px;
+                height: 45px;
+                font-size: 11px;
+            }
+
+            .contact-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(139, 105, 20, 0.3);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            color: white;
+            box-shadow: 0 8px 25px rgba(139, 105, 20, 0.4);
+        }
+
+        .doc-btn {
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .doc-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 105, 20, 0.4);
+            color: white;
+        }
+
+        .video-container {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(218, 165, 32, 0.2);
+        }
+
+        .video-container iframe {
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Modern Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                🏢 ELYSIUM
+                <!-- <div class="logo-space">
+                </div> -->
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">🏠 Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#floor-plans">📐 Floor Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#amenities">🌟 Amenities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">✨ Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">📞 Contact</a>
+                    </li>
+                </ul>
+
+                <div class="cta-buttons">
+                    <a href="tel:+918779776794" class="cta-btn">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </a>
+                    <a href="https://wa.me/918779776794" class="cta-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                    <a href="https://maps.app.goo.gl/9st9pFXX1jYWvDv87?g_st=ic" target="_blank" class="cta-btn">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+
+        <div class="container">
+
+            <div class="hero-content">
+                <div class="marqueee-text" behavior="" direction="right"><b>12 months possesion with OC</b></div>
+
+                <h1 class="floating">🏛️ ELYSIUM</h1>
+                <p class="hero-subtitle">  🏙️ Premium 1 & 2 BHK Residences | Modern Urban
+                    Lifestyle at Tilak Nagar</p>
+                <p class="hero-description">✨ Discover elevated living in the heart of the city with Elysium — a
+                    residential masterpiece crafted for comfort, elegance, and convenience. 🌆</p>
+                <p class="hero-description" style="font-size: 40px; font-weight: 500;">- Elysium by Kripa Elite</p>
+
+                <div class="hero-cta">
+                    <a href="tel:+918779776794" class="primary-btn">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </a>
+                    <a href="https://wa.me/918779776794" class="primary-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp Us
+                    </a>
+
+                    <a href="https://maps.app.goo.gl/9st9pFXX1jYWvDv87?g_st=ic" target="_blank" class="primary-btn">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Location
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Elysium Section -->
+    <section class="why-elysium">
+        <div class="container">
+            <h2 class="section-title">📍 Why ELYSIUM?</h2>
+            <div class="row g-4">
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <h4 class="benefit-title">📐 Thoughtfully Designed</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4 class="benefit-title">🌿 Peaceful Rooftop</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4 class="benefit-title">👨‍👩‍👧‍👦 All Ages Amenities</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h4 class="benefit-title">🏆 Premium Quality</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="benefit-title">🛡️ Trusted Developers</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h4 class="benefit-title">📋 RERA Registered</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="document-buttons d-flex gap-3 justify-content-center mb-4 download-button">
+        <a href="https://drive.google.com/file/d/1q3jfmYB9GJJcgTqu2jYn-ThD1rAWkfPv/view?usp=sharing" download="Elysium-Brochure.pdf" class="doc-btn">
+            <i class="fas fa-download"></i>
+            Download Brochure
+        </a>
+        <a href="https://drive.google.com/file/d/1956VLDvV6KvXnKFF7UWddStlfUb3pMGZ/view?usp=sharing" download="Elysium-Brochure.pdf" class="doc-btn">
+            <i class="fas fa-download"></i>
+            Download Profile
+        </a>
+        <button type="button" class="doc-btn" data-bs-toggle="modal" data-bs-target="#reraModal">
+            <i class="fas fa-certificate"></i>
+            RERA Certificate
+        </button>
+    </div>
+
+    <!-- RERA Certificate Modal -->
+    <div class="modal fade" id="reraModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">📋 RERA Certificate</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <embed src="rera-certificate.pdf" type="application/pdf" width="100%" height="600px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <img src="./images/brochure_image.jpeg" height="auto" width="100%" alt="" srcset="">
+
+
+    <!-- YouTube Video Section -->
+    <section class="section" style="background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">🎥 Virtual Tour & Project Overview</h2>
+            <p class="section-subtitle">🏗️ Take a virtual walkthrough of Elysium and see what makes it special</p>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="video-container">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/bWZy-AlsrW8" title="Elysium Project Video"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Form -->
+    <!-- <section class="container">
+        <div class="quick-form fade-in-up">
+            <h3 class="form-title">
+                <i class="fas fa-calendar-check"></i>
+                📞 Book Your Site Visit Today
+            </h3>
+            <form>
+                <div class="row g-3 mb-3">
+                    <div class="col-md-6">
+                        <input type="text" class="form-input" placeholder="👤 Your Name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="tel" class="form-input" placeholder="📱 Phone Number" required>
+                    </div>
+                </div>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <select class="form-select" required>
+                            <option value="">🏠 Preferred Unit</option>
+                            <option value="1bhk">🏠 1 BHK</option>
+                            <option value="2bhk">🏡 2 BHK</option>
+                            <option value="both">🏘️ Show Both</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="date" class="form-input" placeholder="📅 Preferred Visit Date">
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-calendar-check"></i>
+                    🎯 Book Site Visit Now
+                </button>
+            </form>
+        </div>
+    </section> -->
+
+    <!-- Home Options Section -->
+    <section id="floor-plans" class="section">
+        <div class="container">
+            <h2 class="section-title">🛋️ Choose Your Dream Home</h2>
+            <p class="section-subtitle">✅ Smart layouts | Optimal Space | Natural Ventilation 🌬️</p>
+
+            <div class="row g-4 mb-5">
+                <div class="col-lg-6">
+                    <div class="home-card">
+                        <div class="home-type">
+                            <i class="fas fa-home"></i>
+                            1 BHK
+                        </div>
+                        <div class="home-size">📏 382 Sq. Ft. RERA Carpet</div>
+                        <img class="image-placeholder" src="./images/ELYSIUM_bedroom1.jpg" alt="" srcset="">
+
+                        <ul class="home-features">
+                            <li>🛋️ Spacious Living + Kitchen</li>
+                            <li>🛏️ Master Bedroom</li>
+                            <li>🚿 Common/Attached Toilet</li>
+                            <li>📐 Smart layouts & Optimal Space</li>
+                            <li>🌬️ Natural Ventilation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="home-card">
+                        <div class="home-type">
+                            <i class="fas fa-building"></i>
+                            2 BHK
+                        </div>
+                        <div class="home-size">📏 458 to 544 Sq. Ft. RERA Carpet</div>
+                        <img class="image-placeholder" src="./images/ELYSIUM_bedroom2.jpg" alt="" srcset="">
+
+                        <ul class="home-features">
+                            <li>🛏️ 2 Bedrooms + 2 Bathrooms</li>
+                            <li>🛋️ Modern Living Area</li>
+                            <li>🍳 Smart Kitchen</li>
+                            <li>📐 Optimal Space Utilization</li>
+                            <li>✨ Premium Finishes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-title" style="font-size: 2.5em; margin-top: 80px;">📌 Sample Floor Plans</h3>
+            <div class="row g-4">
+                <!-- <div class="col-lg-4">
+                    <img class="image-placeholder" src="./images/ELYSIUM_Floor1.jpg" alt="" srcset="">
+
+                    <div class="d-flex">
+                        🏠 1 BHK Floor Plan<br>
+                        (350 sq. ft.)
+                    </div>
+                </div> -->
+                <div class="col-lg-4">
+                    <img class="image-placeholder" src="./images/ELYSIUM_Floor2.jpg" alt="" srcset="">
+
+                    <div class="d-flex">
+                        🏠 1 BHK Floor Plan<br>
+                        (382 sq. ft.)
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <img class="image-placeholder" src="./images/ELYSIUM_Floor3.jpg" alt="" srcset="">
+
+                    <div class="d-flex">
+                        🏡 2 BHK Floor Plan<br>
+                        (458 sq. ft.)
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <img class="image-placeholder" src="./images/ELYSIUM_Floor4.jpg" alt="" srcset="">
+
+                    <div class="d-flex">
+                        🏡 2 BHK Floor Plan<br>
+                        (544 sq. ft.)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Images -->
+    <section class="section" style="background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">📸 Project Gallery</h2>
+            <p class="section-subtitle">🏗️ Experience the architectural excellence and premium construction quality</p>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <img class="image-placeholder" src="./images/ELYSIUM_Day.jpg" alt="" srcset="">
+
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <img class="image-placeholder" src="./images/ELYSIUM_Night.jpg" alt="" srcset="">
+
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <img class="image-placeholder" src="./images/ELYSIUM_Room.jpg" alt="" srcset="">
+
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <img class="image-placeholder" src="./images/ELYSIUM_Top.jpg" alt="" srcset="">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="section amenities-section">
+        <div class="container">
+            <h2 class="section-title">🌟 Rooftop Luxury Amenities</h2>
+            <p class="section-subtitle">🏖️ Enjoy resort-style living, every single day. ☀️</p>
+
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-item">
+                        <div class="amenity-icon">🍾</div>
+                        <h4 class="amenity-title">Rooftop Party Lounge</h4>
+                        <p>🎉 Perfect for celebrations</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-item">
+                        <div class="amenity-icon">💪</div>
+                        <h4 class="amenity-title">Open-Air Gym & Yoga</h4>
+                        <p>🧘‍♀️ Fitness under the sky</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-item">
+                        <div class="amenity-icon">🦶</div>
+                        <h4 class="amenity-title">Reflexology Pathway</h4>
+                        <p>🌿 Natural healing walkway</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-item">
+                        <div class="amenity-icon">🏝️</div>
+                        <h4 class="amenity-title">Hammock Lounge</h4>
+                        <p>😴 Relaxation paradise</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-item">
+                        <div class="amenity-icon">🏃‍♂️</div>
+                        <h4 class="amenity-title">Jogging Track</h4>
+                        <p>🌅 Morning runs with views</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-item">
+                        <div class="amenity-icon">👶</div>
+                        <h4 class="amenity-title">Kids' Play Zone</h4>
+                        <p>🎠 Safe fun for children</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-item">
+                        <div class="amenity-icon">♟️</div>
+                        <h4 class="amenity-title">Giant Chess & Games</h4>
+                        <p>🎲 Strategic fun for all</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="amenity-item">
+                        <div class="amenity-icon">🧘‍♂️</div>
+                        <h4 class="amenity-title">Meditation Corner</h4>
+                        <p>🕯️ Peace and tranquility</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="feature-category">
+                        <h3 class="feature-title">
+                            <i class="fas fa-star"></i>
+                            Premium Internal Features
+                        </h3>
+                        <ul class="feature-list">
+                            <li>🏛️ Designer vitrified flooring tiles</li>
+                            <li>🍳 Granite kitchen platform with SS sink</li>
+                            <li>🚿 Branded bath fittings & sanitaryware</li>
+                            <li>💡 Gypsum ceiling with LED lights & fans</li>
+                            <li>🚪 Laminated flush doors & sliding windows</li>
+                            <li>📹 Video Door Phone & CCTV security</li>
+                            <li>⚡ Branded electrical switches</li>
+                            <li>🛁 Antiskid bathroom tiles & geysers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="feature-category">
+                        <h3 class="feature-title">
+                            <i class="fas fa-building"></i>
+                            Project Highlights
+                        </h3>
+                        <ul class="feature-list">
+                            <li>🏛️ Grand Entrance Lobby</li>
+                            <li>⬆️ High-Speed Elevators with ARD</li>
+                            <li>💧 Rainwater Harvesting & Fire Safety</li>
+                            <li>🌿 Podium + Rooftop Amenities</li>
+                            <li>🚗 Automated Horizontal Car Parking</li>
+                            <li>🧱 6" External Walls for Better Insulation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2 style="font-size: 3em; margin-bottom: 25px;">🎯 Your Dream Home Awaits!</h2>
+                <p style="font-size: 1.4em; margin-bottom: 20px;">👉 Limited Inventory | High Demand | Enquire Now! 🔥
+                </p>
+                <p style="font-size: 1.2em; margin-bottom: 50px;">📅 Show Flats Ready | Hassle-Free Booking ✅</p>
+
+                <div class="row justify-content-center g-4 mb-5">
+                    <div class="col-md-3">
+                        <a href="tel:+918779776794" class="contact-btn w-100">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="https://wa.me/918779776794" class="contact-btn w-100">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <a href="https://maps.app.goo.gl/9st9pFXX1jYWvDv87?g_st=ic" target="_blank"
+                            class="contact-btn w-100">
+                            <i class="fas fa-map-marker-alt"></i>
+                             Location
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Contact Form -->
+            <!-- <div class="quick-form" style="margin-top: 60px;">
+                    <h3 class="form-title">
+                        <i class="fas fa-gift"></i>
+                        🎁 Get Exclusive Pre-Launch Offers
+                    </h3>
+                    <form>
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-input" placeholder="👤 Your Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="tel" class="form-input" placeholder="📱 Phone Number" required>
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <select class="form-select" required>
+                                    <option value="">🏠 Preferred Unit</option>
+                                    <option value="1bhk">🏠 1 BHK</option>
+                                    <option value="2bhk">🏡 2 BHK</option>
+                                    <option value="both">🏘️ Show Both</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="date" class="form-input" placeholder="📅 Preferred Visit Date">
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-star"></i>
+                            🌟 Get Exclusive Offers Now!
+                        </button>
+                    </form>
+                </div> -->
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row footer-content">
+                <div class="col-lg-4 mb-4">
+                    <h5>🏛️ Elysium by Kripa Elite</h5>
+                    <p>✨ Live Elevated. Live Elysium.</p>
+                    <p><strong>🌟 Luxury. Location. Lifestyle — Redefined.</strong></p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>📞 Quick Contact</h5>
+                    <p><i class="fas fa-phone"></i> +918779776794</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +918779776794</p>
+                    <p><i class="fas fa-envelope"></i> elyisiumbykripaelite@gmail.com</p>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>📍 Visit Us</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Project Location: Kripa Elite Elysium, Shell Colony, Tilak
+                        Nagar, Chembur, Mumbai, Maharashtra 400089</p>
+                    <!-- <p><i class="fas fa-building"></i> Sales Office: [Sales Office Address]</p> -->
+                    <p><i class="fas fa-clock"></i> Open: Mon-Fri, 9am to 7pm</p>
+                </div>
+            </div>
+
+            <div class="powered-by">
+                <p>⚡ Powered by S&S Associates</p>
+                <p>&copy; 2025 Kripa Elite. All rights reserved. | 📋 RERA Registered Project</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <a href="#home" class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            const scrollTop = document.getElementById('scrollTop');
+
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+                scrollTop.classList.add('visible');
+            } else {
+                navbar.classList.remove('scrolled');
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Show success message with emojis
+                const submitBtn = this.querySelector('.submit-btn');
+                const originalText = submitBtn.innerHTML;
+
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> ✅ Thank You! We\'ll Contact You Soon! 🎉';
+                submitBtn.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = 'linear-gradient(135deg, var(--primary-gold), var(--secondary-gold))';
+                    form.reset();
+                }, 3000);
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe cards and sections for animations
+        document.querySelectorAll('.home-card, .amenity-item, .feature-category, .benefit-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Phone number click tracking (optional)
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function () {
+                console.log('📞 Phone call initiated');
+                // Add your analytics tracking here
+            });
+        });
+
+        // WhatsApp click tracking (optional)
+        document.querySelectorAll('a[href^="https://wa.me"]').forEach(link => {
+            link.addEventListener('click', function () {
+                console.log('💬 WhatsApp chat initiated');
+                // Add your analytics tracking here
+            });
+        });
+    </script>
+</body>
+
+</html>
